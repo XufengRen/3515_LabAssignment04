@@ -31,7 +31,7 @@ public class SelectionActivity extends AppCompatActivity {
         spinner = findViewById(R.id.spinner);
         spinnerImageView = findViewById(R.id.spinnerImage);
         ArrayList dogList = new ArrayList<String>();
-        dogList.add("activity 1");
+        dogList.add("select fomr one of below");
         dogList.add("dog1");
         dogList.add("dog2");dogList.add("dog3");dogList.add("dog4");dogList.add("dog5");
 
@@ -52,7 +52,8 @@ public class SelectionActivity extends AppCompatActivity {
                     Intent act2 = new Intent(SelectionActivity.this, DisplayActivity.class);
                     act2.putExtra("imageTitle",dogList.get(position).toString());
                     act2.putExtra("imageID",dogs[position-1]);
-                    startActivity(act2);
+                    //startActivity(act2);
+                    startActivityForResult(act2,0);
                 }else{
                 }
 
@@ -64,6 +65,19 @@ public class SelectionActivity extends AppCompatActivity {
         //create new intent
 //        Intent launchIntent = new Intent(SelectionActivity.this, DisplayActivity.class);
 //        startActivity(LaunchIntent);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode ==0){
+            if(resultCode == RESULT_OK){
+               spinner.setSelection(0);
+            }
+        }
+
     }
 
 }

@@ -22,6 +22,7 @@
             android:id="@+id/spinnerText"
             android:layout_width="283dp"
             android:layout_height="match_parent"
+            android:textSize ="32sp"
             android:text="TextView" />
     </TableRow>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,5 +22,9 @@ public class DisplayActivity extends AppCompatActivity {
 
         ImageView imageView=findViewById(R.id.display_imageView);
         imageView.setImageResource(imageID);
+
+        Intent onClose = new Intent();
+        onClose.putExtra("keyword", "0");
+        setResult(RESULT_OK, onClose);
     }
 }
