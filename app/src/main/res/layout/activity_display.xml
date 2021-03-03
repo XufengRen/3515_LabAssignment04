@@ -11,6 +11,7 @@
         android:layout_width="227dp"
         android:layout_height="99dp"
         android:text="TextView"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,8 +20,8 @@
 
     <ImageView
         android:id="@+id/display_imageView"
-        android:layout_width="339dp"
-        android:layout_height="334dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

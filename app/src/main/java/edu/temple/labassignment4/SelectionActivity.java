@@ -30,7 +30,6 @@ public class SelectionActivity extends AppCompatActivity {
         //imageView = findViewById(R.id.imageView);
         spinner = findViewById(R.id.spinner);
         spinnerImageView = findViewById(R.id.spinnerImage);
-        //String[] dogArray = new String[]{"dog1","dog2","dog3","dog4","dog5"};
         ArrayList dogList = new ArrayList<String>();
         dogList.add("activity 1");
         dogList.add("dog1");
@@ -38,9 +37,8 @@ public class SelectionActivity extends AppCompatActivity {
 
         dogs = new int[]{R.drawable.dog1,R.drawable.dog2,R.drawable.dog3,R.drawable.dog4,R.drawable.dog5};
 
-        //ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,dogArray);
+
         myAdapter adapter = new myAdapter(this,dogList,dogs);
-        //listView.setAdapter(adapter);
         spinner.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -49,22 +47,18 @@ public class SelectionActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 if (position>0){
-                    //imageView.setVisibility(View.VISIBLE);
-                    //spinnerImageView.setVisibility(View.INVISIBLE);
-                    //showPicture(position-1);
+
 
                     Intent act2 = new Intent(SelectionActivity.this, DisplayActivity.class);
                     act2.putExtra("imageTitle",dogList.get(position).toString());
-                    act2.putExtra("imageID",dogs[position]);
+                    act2.putExtra("imageID",dogs[position-1]);
                     startActivity(act2);
                 }else{
-                    //imageView.setVisibility(View.INVISIBLE);
                 }
 
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent){
-                //imageView.setVisibility(View.GONE);
             }
         });
         //create new intent
@@ -72,7 +66,4 @@ public class SelectionActivity extends AppCompatActivity {
 //        startActivity(LaunchIntent);
     }
 
-    public void showPicture (int position){
-        imageView.setImageResource(dogs[position]);
-    }
 }
