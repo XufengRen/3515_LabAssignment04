@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -17,6 +18,7 @@ public class SelectionActivity extends AppCompatActivity {
     ListView listView;
     ImageView imageView;
     ImageView spinnerImageView;
+    GridView gridView;
     Spinner spinner;
     int[] dogs;
 
@@ -28,39 +30,64 @@ public class SelectionActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Item Selection");
 
         //imageView = findViewById(R.id.imageView);
-        spinner = findViewById(R.id.spinner);
-        spinnerImageView = findViewById(R.id.spinnerImage);
+//        spinner = findViewById(R.id.spinner);
+//        spinnerImageView = findViewById(R.id.spinnerImage);
+        gridView = findViewById(R.id.gridView);
         ArrayList dogList = new ArrayList<String>();
-        dogList.add("select fomr one of below");
+        //dogList.add("select fomr one of below");
         dogList.add("dog1");
         dogList.add("dog2");dogList.add("dog3");dogList.add("dog4");dogList.add("dog5");
-
         dogs = new int[]{R.drawable.dog1,R.drawable.dog2,R.drawable.dog3,R.drawable.dog4,R.drawable.dog5};
 
 
-        myAdapter adapter = new myAdapter(this,dogList,dogs);
-        spinner.setAdapter(adapter);
+//        myAdapter adapter = new myAdapter(this,dogList,dogs);
+//        spinner.setAdapter(adapter);
+//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//
+//                if (position>0){
+//
+//
+//                    Intent act2 = new Intent(SelectionActivity.this, DisplayActivity.class);
+//                    act2.putExtra("imageTitle",dogList.get(position).toString());
+//                    act2.putExtra("imageID",dogs[position-1]);
+//                    //startActivity(act2);
+//                    startActivityForResult(act2,0);
+//                }else{
+//                }
+//
+//            }
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent){
+//            }
+//        });
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        gridViewAdapter gridViewAdapter = new gridViewAdapter(this, dogList,dogs);
+        gridView.setAdapter(gridViewAdapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent act2 = new Intent(SelectionActivity.this,DisplayActivity.class);
+                act2.putExtra("imageTitle", dogList.get(position).toString());
+                act2.putExtra("imageID", dogs[position]);
+                startActivityForResult(act2,0);
+            }
+        });
+        gridView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                if (position>0){
-
-
-                    Intent act2 = new Intent(SelectionActivity.this, DisplayActivity.class);
-                    act2.putExtra("imageTitle",dogList.get(position).toString());
-                    act2.putExtra("imageID",dogs[position-1]);
-                    //startActivity(act2);
-                    startActivityForResult(act2,0);
-                }else{
-                }
-
+                Intent act2 = new Intent(SelectionActivity.this,DisplayActivity.class);
+                act2.putExtra("imageTitle", dogList.get(position).toString());
+                act2.putExtra("imageID", dogs[position]);
+                startActivityForResult(act2,0);
             }
+
             @Override
-            public void onNothingSelected(AdapterView<?> parent){
+            public void onNothingSelected(AdapterView<?> parent) {
             }
+
         });
         //create new intent
 //        Intent launchIntent = new Intent(SelectionActivity.this, DisplayActivity.class);
@@ -74,7 +101,7 @@ public class SelectionActivity extends AppCompatActivity {
 
         if(requestCode ==0){
             if(resultCode == RESULT_OK){
-               spinner.setSelection(0);
+//               spinner.setSelection(0);
             }
         }
 
