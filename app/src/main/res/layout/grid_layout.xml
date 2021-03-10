@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/gridImage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,15 +20,16 @@
         android:id="@+id/gridText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:gravity="center"
-        android:textSize="24dp"
+        android:text="TextView"
         android:textColor="@color/white"
+        android:textSize="24dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/gridImage"
         app:layout_constraintEnd_toEndOf="@+id/gridImage"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="@+id/gridImage"
         app:layout_constraintTop_toTopOf="@+id/gridImage"
-        app:layout_constraintVertical_bias="0.511" />
+        app:layout_constraintVertical_bias="0.477" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
