@@ -11,9 +11,7 @@
         android:theme="@style/Theme.LabAssignment4">
         <activity
             android:name=".DisplayActivity"
-            android:label = "Display">
-
-        </activity>
+            android:label="Display"></activity>
         <activity android:name=".SelectionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
