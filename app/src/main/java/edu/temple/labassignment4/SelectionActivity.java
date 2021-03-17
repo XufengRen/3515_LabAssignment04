@@ -10,6 +10,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -21,7 +22,7 @@ public class SelectionActivity extends AppCompatActivity {
     GridView gridView;
     Spinner spinner;
     int[] dogs;
-
+    TextView mainText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
