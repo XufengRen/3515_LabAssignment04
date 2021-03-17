@@ -28,7 +28,7 @@ public class SelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection);
 
-        getSupportActionBar().setTitle("Item Selection");
+        getSupportActionBar().setTitle(R.string.selectpage_label);
 
         //imageView = findViewById(R.id.imageView);
 //        spinner = findViewById(R.id.spinner);
@@ -36,8 +36,7 @@ public class SelectionActivity extends AppCompatActivity {
         gridView = findViewById(R.id.gridView);
         ArrayList dogList = new ArrayList<String>();
         //dogList.add("select fomr one of below");
-        dogList.add("dog1");
-        dogList.add("dog2");dogList.add("dog3");dogList.add("dog4");dogList.add("dog5");
+        dogList.add(R.string.selectpage_doglist_1);dogList.add(R.string.selectpage_doglist_2);dogList.add(R.string.selectpage_doglist_3);dogList.add(R.string.selectpage_doglist_4);dogList.add(R.string.selectpage_doglist_5);
         dogs = new int[]{R.drawable.dog1,R.drawable.dog2,R.drawable.dog3,R.drawable.dog4,R.drawable.dog5};
 
 

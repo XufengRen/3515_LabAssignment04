@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LabAssignment4</string>
+    <string name="selectpage_instruction">Veuillez sélectionner un article</string>
+    <string name="selectpage_label">Sélection d\'articles</string>
+    <string name= "selectpage_doglist_1">Chien1</string>
+    <string name= "selectpage_doglist_2">Chien2</string>
+    <string name= "selectpage_doglist_3">Chien3</string>
+    <string name= "selectpage_doglist_4">Chien4</string>
+    <string name= "selectpage_doglist_5">Chien5</string>
+    <string name= "displaypage_label">Afficher</string>
+</resources>

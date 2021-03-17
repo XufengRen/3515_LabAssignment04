@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">LabAssignment4</string>
+    <string name="selectpage_instruction">Please select an item</string>
+    <string name="selectpage_label">Item Selection</string>
+    <string name= "selectpage_doglist_1">Dog1</string>
+    <string name= "selectpage_doglist_2">Dog2</string>
+    <string name= "selectpage_doglist_3">Dog3</string>
+    <string name= "selectpage_doglist_4">Dog4</string>
+    <string name= "selectpage_doglist_5">Dog5</string>
+    <string name= "displaypage_label">Display</string>
 </resources>
