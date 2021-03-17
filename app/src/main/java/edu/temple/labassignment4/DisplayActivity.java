@@ -15,10 +15,11 @@ public class DisplayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display);
 
         Intent intent=getIntent();
-        String imageTitle = intent.getStringExtra("imageTitle");
+        int imageName = intent.getIntExtra("imageTitle", 0);
         int imageID = intent.getIntExtra("imageID",0);
+
         TextView textView = findViewById(R.id.display_textView);
-        textView.setText(imageTitle);
+        textView.setText(imageName);
 
         ImageView imageView=findViewById(R.id.display_imageView);
         imageView.setImageResource(imageID);

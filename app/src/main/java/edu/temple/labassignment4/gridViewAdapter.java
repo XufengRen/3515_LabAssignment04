@@ -13,21 +13,21 @@ import java.util.ArrayList;
 
 public class gridViewAdapter extends BaseAdapter {
     Context context;
-    ArrayList<String> items;
+    int[] items;
     int[] imageID;
-    public gridViewAdapter(Context context, ArrayList items, int[] imageID){
+    public gridViewAdapter(Context context, int[] items, int[] imageID){
         this.context = context;
         this.items = items;
         this.imageID = imageID;
     }
     @Override
     public int getCount() {
-        return items.size();
+        return items.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return items.get(position);
+        return items[position];
     }
 
     @Override
@@ -40,7 +40,7 @@ public class gridViewAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View row = inflater.inflate(R.layout.grid_layout,parent,false);
         TextView textView = (TextView)row.findViewById(R.id.gridText);
-        textView.setText(items.get(position));
+        textView.setText(items[position]);
         textView.setGravity(Gravity.CENTER);
         ImageView imageView = (ImageView)row.findViewById(R.id.gridImage);
         imageView.setImageResource(imageID[position]);
